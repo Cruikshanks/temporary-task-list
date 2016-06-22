@@ -33,6 +33,16 @@ To run the app call
 bundle exec rake
 ```
 
+## Commands
+
+The following commands are supported.
+
+- `GET /`
+  - Returns the version of the app, along with versions for Ruby, Sinatra and Rack
+  - `curl --cookie cookies.txt --cookie-jar cookies.txt -L  "http://localhost:4567"`
+
+See [Curl](https://curl.haxx.se/) for further details on using Curl.
+
 ## License
 
 This is released under the [MIT license](https://opensource.org/licenses/MIT).
