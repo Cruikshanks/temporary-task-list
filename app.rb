@@ -17,3 +17,13 @@ configure do
 
   set :session_secret, SECRET ||= 'super secret'.freeze
 end
+
+get '/' do
+  version = File.read('VERSION').strip
+  <<-ENDRESPONSE
+    Temporary Task List: #{version}
+    Ruby:                #{RUBY_VERSION}
+    Rack:                #{Rack::VERSION}
+    Sinatra:             #{Sinatra::VERSION}
+  ENDRESPONSE
+end
