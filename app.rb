@@ -27,3 +27,19 @@ get '/' do
     Sinatra:             #{Sinatra::VERSION}
   ENDRESPONSE
 end
+
+get '/tasks' do
+  response = ''
+  session_tasks.list.each_with_index do |val, index|
+    response = "#{response}[#{index}] #{val}\n"
+  end
+  response
+end
+
+post '/tasks/:task' do
+  tasks = session_tasks
+  tasks.add(params[:task])
+  session[:tasks] = tasks
+
+  redirect('/tasks')
+end
