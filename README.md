@@ -49,6 +49,9 @@ The following commands are supported.
 - `POST /tasks/:task`
   - Adds a new task to the task list
   - `curl --cookie cookies.txt --cookie-jar cookies.txt -L --data '' "http://localhost:4567/tasks/add%20some%20tests"`
+- `DELETE /tasks/:id`
+  - Deletes the specified task
+  - `curl --cookie cookies.txt --cookie-jar cookies.txt -X DELETE "http://localhost:4567/task/1"`
 
 See [Curl](https://curl.haxx.se/) for further details on using Curl.
 

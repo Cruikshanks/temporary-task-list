@@ -48,3 +48,9 @@ get '/task/:id' do
   id = params[:id].to_i
   "[#{id}] #{session_tasks.get(id)}\n"
 end
+
+delete '/task/:id' do
+  session_tasks.delete(params[:id].to_i)
+
+  redirect('/tasks')
+end
