@@ -43,3 +43,8 @@ post '/tasks/:task' do
 
   redirect('/tasks')
 end
+
+get '/task/:id' do
+  id = params[:id].to_i
+  "[#{id}] #{session_tasks.get(id)}\n"
+end

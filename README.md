@@ -43,6 +43,9 @@ The following commands are supported.
 - `GET /tasks`
   - Returns a list of all current tasks
   - `curl --cookie cookies.txt --cookie-jar cookies.txt -L  "http://localhost:4567/tasks"`
+- `GET /task/:id`
+  - Returns just the specified task
+  - `curl --cookie cookies.txt --cookie-jar cookies.txt -L  "http://localhost:4567/task/1"`
 - `POST /tasks/:task`
   - Adds a new task to the task list
   - `curl --cookie cookies.txt --cookie-jar cookies.txt -L --data '' "http://localhost:4567/tasks/add%20some%20tests"`
